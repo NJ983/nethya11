@@ -179,14 +179,14 @@ async def start(client, message):
     if message.chat.type != "private":
         buttons = InlineKeyboardMarkup(
             [[InlineKeyboardButton(text="Click here",
-                url=f"http://t.me/nethyabot?start")]])
+                url=f"http://t.me/{context.bot.username}?start")]])
         await message.reply("Contact me in PM",
                             reply_markup=buttons)
         
     else:
        
         buttons = [[InlineKeyboardButton("Support", url="https://t.me/AwesomeSupport"),
-                    InlineKeyboardButton("Add", url="t.me/nethyabot?startgroup=true")
+                    InlineKeyboardButton("Add", url=f"https://t.me/{context.bot.username}?startgroup=true")
                     ]]
         Photo = "https://telegra.ph/file/23932e22ece464a1fb06e.jpg"
         await message.reply_photo(Photo, caption=f"Hello [{message.from_user.first_name}](tg://user?id={message.from_user.id}), Machine Learning Chat Bot that can talk about any topic in any language\n /help - Help Commands\n ", reply_markup=InlineKeyboardMarkup(buttons))
@@ -200,7 +200,7 @@ async def help(client, message):
     if message.chat.type != "private":
         buttons = InlineKeyboardMarkup(
             [[InlineKeyboardButton(text="Click here",
-                url=f"http://t.me/nethyabot?start=help_")]])
+                url=f"http://t.me/{context.bot.username}?start=help_")]])
         await message.reply("Contact me in PM",
                             reply_markup=buttons)
         
